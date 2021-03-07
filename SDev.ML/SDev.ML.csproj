@@ -77,10 +77,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\ANN\ActivationFunction.cs" />
+    <Compile Include="Model\ANN\Connection.cs" />
+    <Compile Include="Model\ANN\Layer.cs" />
+    <Compile Include="Model\ANN\NeuralNet.cs" />
+    <Compile Include="Model\ANN\NeuralNetFactory.cs" />
+    <Compile Include="Model\ANN\Neuron.cs" />
+    <Compile Include="Model\ANN\Topology.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scaler\Scaler.cs" />
     <Compile Include="Scaler\StandardScaler.cs" />
+    <Compile Include="Tools\Extensions.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

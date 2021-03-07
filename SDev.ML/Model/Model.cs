@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SDev.ML.Model
+namespace SDev.ML
 {
-    class Model
+    public abstract class Model
     {
+        public abstract void Fit();
+        public abstract void Predict();
+        public abstract void FitPredict();
     }
 }
