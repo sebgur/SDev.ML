@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/SDev.ML/.vs/SDev.ML/v16
+/Apps/Test/bin/x86/Debug/netcoreapp3.1
+/.vs/SDev.ML
+/Apps/Test/obj
+/SDev.ML/bin/x86/Debug
+/SDev.ML/obj

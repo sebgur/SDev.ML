@@ -77,8 +77,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Example\Class1.cs" />
+    <Compile Include="Model\Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scaler\Scaler.cs" />
+    <Compile Include="Scaler\StandardScaler.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
