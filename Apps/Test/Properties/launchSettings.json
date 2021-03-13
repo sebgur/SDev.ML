@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Test": {
+      "commandName": "Project",
+      "commandLineArgs": "F:\\Sebastien\\OneDrive\\Work\\ML\\Tests\\test.csv"
+    }
+  }
+}

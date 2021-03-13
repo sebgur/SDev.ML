@@ -8,7 +8,7 @@ namespace SDev.ML
         //
         public Connection()
         {
-            Weight = RandomGenerator.Draw();
+            Weight = RandomSequence.DrawDouble();
             DeltaWeight = 0.0;
             //DeltaWeight = Constant.MACHINE_MAX;
         }

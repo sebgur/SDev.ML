@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace SDev.ML
 {
@@ -15,6 +16,11 @@ namespace SDev.ML
             for (int i = 0; i < size; i++)
                 a[i] = value;
             return a;
+        }
+
+        public static double[] ToDouble(this object[] a)
+        {
+            return a.Select(x => Convert.ToDouble(x)).ToArray();
         }
     }
 }

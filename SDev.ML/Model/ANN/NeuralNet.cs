@@ -10,7 +10,7 @@ namespace SDev.ML
         //
         public NeuralNet(Topology topology, ActivationFunction activationFunction_, double alpha = 0.5, double eta = 0.15)
         {
-            RandomGenerator.Reset();
+            RandomSequence.Reset();
             numberLayers = topology.NumberLayers();
             if (numberLayers < 2)
                 throw new Exception("Number of layers should be at least 2");
@@ -94,23 +94,5 @@ namespace SDev.ML
         int numberLayers;
         double recentAverageError, recentAverageSmoothingFactor = 1.0;
         #endregion
-    }
-
-    static class RandomGenerator
-    {
-        #region Methods
-        //
-        public static void Reset()
-        {
-            rnd.Initialize();
-        }
-        //
-        public static double Draw()
-        {
-            return rnd.NextReal();
-        }
-        #endregion
-
-        static PseudoRandomSequence rnd = new MersenneTwister(1, 1, 100);
     }
 }
