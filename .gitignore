@@ -8,3 +8,8 @@
 /Apps/Test/obj
 /SDev.ML/bin/x86/Debug
 /SDev.ML/obj
+/packages
+/SDev.MLTests/bin
+/SDev.MLTests/obj
+/SDev.MLTests/Properties
+/SDev.MLTests/packages.config
