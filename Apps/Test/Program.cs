@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using SDev.ML;
 
 namespace Test
@@ -10,10 +11,9 @@ namespace Test
         {
             try
             {
-                string file = args[0];
-
-                // Read dataset
-                DataFrame df = DataFrame.Read(file, sep: '\t');
+                // Read training set
+                string trainFile = args[0];
+                DataFrame df = DataFrame.Read(trainFile, sep: '\t');
                 foreach (string s in df.Headers())
                     Console.WriteLine(s);
 
@@ -37,9 +37,31 @@ namespace Test
                 int inputSize = xTrain[0].Length;
                 int outputSize = yTrain[0].Length;
                 double alpha = 0.5;
-                double eta = 0.5;
+                double eta = 0.15;
                 NeuralNet model = NeuralNetFactory.Get(activation, nHiddenLayers, nNeuronsPerLayer,
                                                        inputSize, outputSize, alpha, eta);
+
+                model.Fit(xTrain, yTrain);
+
+                // Predict
+                string predFile = args[1];
+                df = DataFrame.Read(predFile, sep: '\t');
+                foreach (string s in df.Headers())
+                    Console.WriteLine(s);
+
+                //double[] xPred_ = df["x"].ToDouble();
+                //double[][] xPred = new double[xPred_.Length][];
+                //for (int i = 0; i < xPred_.Length; i++)
+                //    xPred[i] = new double[1] { xPred_[i] };
+                double[][] xPred = df.SetAsDouble(new string[] { "x" });
+                double[] yPred = model.Predict(xPred);
+
+                // Output result
+                string resFile = args[2];
+                object[][] resData = yPred.Select(x => new object[] { x }).ToArray();
+                CsvManager.Write(resData, resFile, sep: '\t');
+
+
                 //model.BackPropagation();
                 string ss = "";
                 ss += "";

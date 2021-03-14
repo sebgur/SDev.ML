@@ -76,7 +76,7 @@ namespace SDev.ML
         {
             switch (type)
             {
-                case "ReLU": return new ReLUActivation();
+                case "Relu": return new ReLUActivation();
                 case "Tanh": return new TanhActivation();
                 case "Linear": return new LinearActivation();
                 case "Sigmoid": return new SigmoidActivation();

@@ -89,6 +89,7 @@
     <Compile Include="Scaler\Scaler.cs" />
     <Compile Include="Scaler\StandardScaler.cs" />
     <Compile Include="Tools\CsvManager.cs" />
+    <Compile Include="Tools\DataFrame.cs" />
     <Compile Include="Tools\Extensions.cs" />
     <Compile Include="Tools\RandomSequence.cs" />
   </ItemGroup>

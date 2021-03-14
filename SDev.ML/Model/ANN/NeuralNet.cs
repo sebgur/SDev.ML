@@ -33,6 +33,33 @@ namespace SDev.ML
             }
         }
         //
+        public void Fit(double[][] samplePoints, double[][] sampleValues)
+        {
+            for (int e = 0; e < nEpochs; e++)
+            {
+                for (int i = 0; i < samplePoints.Length; i++)
+                {
+                    FeedForward(samplePoints[i]);
+                    BackPropagation(sampleValues[i]);
+                }
+            }
+        }
+        //
+        public double[] Predict(double[][] x)
+        {
+            int nPred = x.Length;
+            double[] yPred = new double[nPred];
+            for (int i = 0; i < nPred; i++)
+            {
+                FeedForward(x[i]);
+                double[] results;
+                Report(out results);
+                yPred[i] = results[0];
+            }
+
+            return yPred;
+        }
+        //
         public void FeedForward(double[] inputValues)
         {
             // Assign input values to input neurons
@@ -93,6 +120,7 @@ namespace SDev.ML
         Layer[] layers;
         int numberLayers;
         double recentAverageError, recentAverageSmoothingFactor = 1.0;
+        int nEpochs = 10;
         #endregion
     }
 }

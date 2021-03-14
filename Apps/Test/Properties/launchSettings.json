@@ -2,7 +2,7 @@
   "profiles": {
     "Test": {
       "commandName": "Project",
-      "commandLineArgs": "F:\\Sebastien\\OneDrive\\Work\\ML\\Tests\\test.csv"
+      "commandLineArgs": "F:\\Sebastien\\OneDrive\\Work\\ML\\Tests\\train.tsv F:\\Sebastien\\OneDrive\\Work\\ML\\Tests\\test.tsv F:\\Sebastien\\OneDrive\\Work\\ML\\Tests\\result.tsv"
     }
   }
 }
