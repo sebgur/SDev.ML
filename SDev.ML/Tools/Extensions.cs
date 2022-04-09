@@ -23,7 +23,6 @@ namespace SDev.ML
             return a.Select(x => Convert.ToDouble(x)).ToArray();
         }
 
-        //
         public static T[][] SetSize<T>(this T[][] a, int size)
         {
             int mainSize = a.Length;
