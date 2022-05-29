@@ -16,3 +16,6 @@
 /Apps/TestSuite/bin/x64/Debug
 /SDev.ML/bin/x64/Debug
 /Apps/TestSuite/obj/Debug
+/Apps/TestSuite/obj/x64
+/Apps/TestSuite/obj
+/SDev.ML/bin/Debug
