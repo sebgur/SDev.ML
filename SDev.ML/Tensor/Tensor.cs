@@ -108,7 +108,7 @@ namespace SDev.ML
         #region Operations
         public static Tensor operator +(Tensor t1, Tensor t2)
         {
-            double[] data = add(t1.data, t2.data);
+            double[] data = Add(t1.data, t2.data);
             if (t1.autograd && t2.autograd)
             {
                 Tensor[] newCreators = new Tensor[] { t1, t2 };
@@ -120,7 +120,7 @@ namespace SDev.ML
 
         public static Tensor operator -(Tensor t1, Tensor t2)
         {
-            double[] data = sub(t1.data, t2.data);
+            double[] data = Sub(t1.data, t2.data);
             if (t1.autograd && t2.autograd)
             {
                 Tensor[] newCreators = new Tensor[] { t1, t2 };
@@ -132,7 +132,7 @@ namespace SDev.ML
 
         public static Tensor operator -(Tensor t1)
         {
-            double[] data = opp(t1.data);
+            double[] data = Opp(t1.data);
             if (t1.autograd)
             {
                 Tensor[] newCreators = new Tensor[] { t1 };
@@ -144,7 +144,7 @@ namespace SDev.ML
 
         public static Tensor operator *(Tensor t1, Tensor t2)
         {
-            double[] data = mul(t1.data, t2.data);
+            double[] data = Mul(t1.data, t2.data);
             if (t1.autograd && t2.autograd)
             {
                 Tensor[] newCreators = new Tensor[] { t1, t2 };
@@ -156,7 +156,7 @@ namespace SDev.ML
 
         public static Tensor operator /(Tensor t1, Tensor t2)
         {
-            double[] data = div(t1.data, t2.data);
+            double[] data = Div(t1.data, t2.data);
             if (t1.autograd && t2.autograd)
             {
                 Tensor[] newCreators = new Tensor[] { t1, t2 };
@@ -204,7 +204,7 @@ namespace SDev.ML
         #endregion
 
         #region Utilities
-        private static double[] add(double[] v1, double[] v2)
+        private static double[] Add(double[] v1, double[] v2)
         {
             int size = v1.Length;
             if (v2.Length != size)
@@ -217,7 +217,7 @@ namespace SDev.ML
             return result;
         }
 
-        private static double[] sub(double[] v1, double[] v2)
+        private static double[] Sub(double[] v1, double[] v2)
         {
             int size = v1.Length;
             if (v2.Length != size)
@@ -230,7 +230,7 @@ namespace SDev.ML
             return result;
         }
 
-        private static double[] opp(double[] v1)
+        private static double[] Opp(double[] v1)
         {
             int size = v1.Length;
             double[] result = new double[size];
@@ -240,7 +240,7 @@ namespace SDev.ML
             return result;
         }
 
-        private static double[] mul(double[] v1, double[] v2)
+        private static double[] Mul(double[] v1, double[] v2)
         {
             int size = v1.Length;
             if (v2.Length != size)
@@ -253,7 +253,7 @@ namespace SDev.ML
             return result;
         }
 
-        private static double[] div(double[] v1, double[] v2)
+        private static double[] Div(double[] v1, double[] v2)
         {
             int size = v1.Length;
             if (v2.Length != size)
@@ -341,7 +341,7 @@ namespace SDev.ML
 
     public class One : Tensor
     {
-        public One(int dim) : base (new double[dim].Set(1), autograd_: true)
+        public One(int dim) : base (new double[dim].Set(1), autograd_: false)
         {
         }
     }

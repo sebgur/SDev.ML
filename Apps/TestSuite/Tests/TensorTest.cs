@@ -15,7 +15,6 @@ namespace TestSuite
             Tensor X = Tensor.Pow(x, pow2);
             //Tensor Y = Tensor.Pow(y, pow3);
 
-            //Tensor f = X * X;
             Tensor f = Tensor.Pow(X, pow2);
             f.backward(new Tensor(new double[] { 1, 1 }));
 
